@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Splitter</title>
+</head>
+<body>
+  <h1>Split your PDF</h1>
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="pdf" accept=".pdf" required />
+    <button type="submit">Upload & Split</button>
+  </form>
+
+  <% if (downloadLinks) { %>
+    <h2>Download Split PDFs:</h2>
+    <ul>
+      <li><a href="<%= downloadLinks.label %>" download>Download LABEL PDF</a></li>
+      <li><a href="<%= downloadLinks.invoice %>" download>Download INVOICE PDF</a></li>
+    </ul>
+  <% } %>
+</body>
+</html>
